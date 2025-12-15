@@ -11,9 +11,10 @@ for i in range(0,n):
     print(f"Round {i+1}:")
     
     comp = random.choice(options)
-    user = input("Enter word by player: ")
-    if(user!= "Paper" or "Rock" or "Scissor"):
-        print("Invalid input")
+    user = input("Enter word by player: ").lower().capitalize()
+    if user not in options:
+        print("Invalid input, please enter Rock, Paper, or Scissor")
+        continue
     print(f"Computer chose {comp}")
     if(user == "Rock" and comp == "Scissor"):
         print(f"User wins round {i+1}")
